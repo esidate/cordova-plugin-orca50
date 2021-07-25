@@ -1,0 +1,26 @@
+{
+  "name": "cordova-plugin-orca50",
+  "version": "1.2.1",
+  "description": "Cordova Orca50 Plugin",
+  "cordova": {
+    "id": "cordova-plugin-orca50",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thehunckerma/cordova-plugin-orca50.git"
+  },
+  "keywords": [
+    "cordova",
+    "orca50",
+    "rfid",
+    "qr",
+    "barcode",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "negus13",
+  "license": "Apache 2.0"
+}
