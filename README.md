@@ -1,7 +1,3 @@
----
-title: Cordova Plugin Orca50
-description: Cordova Orca50 Plugin
----
 <!--
 # license: Licensed to the Apache Software Foundation (ASF) under one
 #         or more contributor license agreements.  See the NOTICE file
