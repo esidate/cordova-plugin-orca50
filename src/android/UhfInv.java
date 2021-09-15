@@ -457,8 +457,7 @@ public class UhfInv extends CordovaPlugin {
           } else if ("ListenForButtonTrigger".equals(action)) {
             cordova.getThreadPool().execute(new Runnable() {
               public void run() {
-                int nResult = mReaderRB.setTrigger(true);
-                callbackContext.success(nResult);
+                triggerListening(callbackContext);
               }
             });
             return true;
