@@ -454,6 +454,13 @@ public class UhfInv extends CordovaPlugin {
               }
             });
             return true;
+          } else if ("ListenForButtonTrigger".equals(action)) {
+            cordova.getThreadPool().execute(new Runnable() {
+              public void run() {
+                callbackContext.success("success: ListenForButtonTrigger");
+              }
+            });
+            return true;
           }
         }
         callbackContext.error("Orca50 action failure");
