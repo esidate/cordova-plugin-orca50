@@ -1,21 +1,3 @@
-/*
-       Licensed to the Apache Software Foundation (ASF) under one
-       or more contributor license agreements.  See the NOTICE file
-       distributed with this work for additional information
-       regarding copyright ownership.  The ASF licenses this file
-       to you under the Apache License, Version 2.0 (the
-       "License"); you may not use this file except in compliance
-       with the License.  You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-       Unless required by applicable law or agreed to in writing,
-       software distributed under the License is distributed on an
-       "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-       KIND, either express or implied.  See the License for the
-       specific language governing permissions and limitations
-       under the License.
-*/
 package com.pactera.hifm.uhf;
 
 import java.util.TimeZone;
@@ -33,8 +15,8 @@ import android.provider.Settings;
 public class Device extends CordovaPlugin {
     public static final String TAG = "Device";
 
-    public static String platform;                            // Device OS
-    public static String uuid;                                // Device UUID
+    public static String platform; // Device OS
+    public static String uuid; // Device UUID
 
     private static final String ANDROID_PLATFORM = "Android";
     private static final String AMAZON_PLATFORM = "amazon-fireos";
@@ -61,10 +43,11 @@ public class Device extends CordovaPlugin {
     /**
      * Executes the request and returns PluginResult.
      *
-     * @param action            The action to execute.
-     * @param args              JSONArry of arguments for the plugin.
-     * @param callbackContext   The callback id used when calling back into JavaScript.
-     * @return                  True if the action was valid, false if not.
+     * @param action          The action to execute.
+     * @param args            JSONArry of arguments for the plugin.
+     * @param callbackContext The callback id used when calling back into
+     *                        JavaScript.
+     * @return True if the action was valid, false if not.
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if ("getDeviceInfo".equals(action)) {
@@ -74,19 +57,18 @@ public class Device extends CordovaPlugin {
             r.put("platform", this.getPlatform());
             r.put("model", this.getModel());
             r.put("manufacturer", this.getManufacturer());
-	        r.put("isVirtual", this.isVirtual());
+            r.put("isVirtual", this.isVirtual());
             r.put("serial", this.getSerialNumber());
             callbackContext.success(r);
-        }
-        else {
+        } else {
             return false;
         }
         return true;
     }
 
-    //--------------------------------------------------------------------------
+    // --------------------------------------------------------------------------
     // LOCAL METHODS
-    //--------------------------------------------------------------------------
+    // --------------------------------------------------------------------------
 
     /**
      * Get the OS name.
@@ -109,7 +91,8 @@ public class Device extends CordovaPlugin {
      * @return
      */
     public String getUuid() {
-        String uuid = Settings.Secure.getString(this.cordova.getActivity().getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
+        String uuid = Settings.Secure.getString(this.cordova.getActivity().getContentResolver(),
+                android.provider.Settings.Secure.ANDROID_ID);
         return uuid;
     }
 
@@ -167,8 +150,8 @@ public class Device extends CordovaPlugin {
     }
 
     public boolean isVirtual() {
-	return android.os.Build.FINGERPRINT.contains("generic") ||
-	    android.os.Build.PRODUCT.contains("sdk");
+        return android.os.Build.FINGERPRINT.contains("generic") ||
+                android.os.Build.PRODUCT.contains("sdk");
     }
 
 }
