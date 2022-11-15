@@ -16,7 +16,6 @@ channel.onCordovaReady.subscribe(function () {
     // alert("channel.onCordovaReady.subscribe... " + msg);
   }
   try {
-    console.log(document);
     document.addEventListener("menubutton", () => {
       success(null);
     });
