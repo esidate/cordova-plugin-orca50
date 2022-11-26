@@ -1,11 +1,11 @@
-# cordova-plugin-orca50
+# Cordova Plugin for Orca50 Devices
 
 This plugin provides and API to communicate with the [Orca 50](http://www.rodinbell.com/en/ProductDetail.html?ID=12423) UHF RFID device
 
 ## Installation
 
 ```
-cordova plugin add https://github.com/thehunckerma/cordova-plugin-orca50.git
+cordova plugin add https://github.com/esidate/cordova-plugin-orca50.git
 ```
 
 An instance of the module will be created and stored in a javascript global variable with the name `uhf`.
